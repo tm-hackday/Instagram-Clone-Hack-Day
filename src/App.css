@@ -13,6 +13,18 @@
   .wrapper.form-success .container h1 {
     transform: translateY(85px); }
 
+.dropzone {
+  z-index: 2; }
+
+.imagePreview {
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px; }
+
+ul {
+  list-style-type: none; }
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -70,6 +82,8 @@ form {
     transition-duration: 0.25s; }
     form button:hover {
       background-color: #f5f7f9; }
+  form h1 {
+    margin: 0,auto; }
 
 .button {
   appearance: none;

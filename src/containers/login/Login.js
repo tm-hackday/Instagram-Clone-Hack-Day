@@ -34,7 +34,7 @@ class Login extends Component {
 
     return (
       <div className="container">
-        <h1>Cognito User Pool Login</h1>
+        <h1>Trinitynstagram</h1>
 
         {auth.error && <p className="error">{auth.error}</p>}
         <form className="form" onSubmit={e => this.handleSignIn(e)}>

@@ -21,6 +21,21 @@
   }
 }
 
+.dropzone{
+  z-index: 2;
+}
+
+.imagePreview{
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+ul{
+  list-style-type: none;
+}
+
 .container{
   max-width: 600px;
   margin: 0 auto;
@@ -94,6 +109,9 @@ form{
     &:hover{
       background-color: rgb(245, 247, 249);
     }
+  }
+  h1{
+    margin:0,auto;
   }
 }
 

@@ -4,7 +4,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import './App.css';
-import { Login, Private, Private2, Dialog } from './containers';
+import { Login, Private, ImageView, ImageUpload, Dialog } from './containers';
 import { fetchLoginState } from './redux/auth/actions/auth';
 
 const propTypes = {
@@ -68,10 +68,16 @@ class App extends Component {
           <RouteWithAuth path="/" exact private component={() => <Private />} />
           <RouteWithAuth path="/login" exact component={() => <Login />} />
           <RouteWithAuth
-            path="/private2"
+            path="/imageUpload"
             exact
             private
-            component={() => <Private2 />}
+            component={() => <ImageUpload />}
+          />
+          <RouteWithAuth
+            path="/imageView"
+            exact
+            private
+            component={() => <ImageView />}
           />
         </Switch>
         <ul className="bg-bubbles">

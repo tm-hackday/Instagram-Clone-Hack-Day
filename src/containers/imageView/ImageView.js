@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Private2 extends Component {
+class ImageView extends Component {
   render() {
     return (
       <div className="container">
+        <h1>Image Stream</h1>
         <form className="form">
-          <h1>Private2</h1>
           <Link to="/" className="button">
             Private
           </Link>
@@ -16,4 +16,4 @@ class Private2 extends Component {
   }
 }
 
-export default Private2;
+export default ImageView;

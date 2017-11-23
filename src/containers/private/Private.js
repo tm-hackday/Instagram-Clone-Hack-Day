@@ -15,39 +15,22 @@ class Private extends Component {
     this.props.dispatch(clickLogout());
   }
 
-  handleHello = this.handleHello.bind(this);
-  handleHello(e) {
-    e.preventDefault();
-    this.props.dispatch(hello({ jwt: this.props.auth.jwt, path: 'hello' }));
-  }
-
-  handleGoodNight = this.handleGoodNight.bind(this);
-  handleGoodNight(e) {
-    e.preventDefault();
-    this.props.dispatch(
-      hello({ jwt: this.props.auth.jwt, path: 'good-night' })
-    );
-  }
-
   render() {
     const { hello } = this.props.auth;
 
     return (
       <div className="container">
-        <h1>Private</h1>
+        <h1>Welcome</h1>
         {hello && <h2>{hello.Message}</h2>}
         <form className="form">
-          <Link to="private2" className="button">
-            Private2
+          <Link to="imageUpload" className="button">
+            Upload Image
+          </Link>
+          <Link to="imageView" className="button">
+            View Images
           </Link>
           <button className="button" onClick={this.handleSignOut}>
             Logout
-          </button>
-          <button className="button" onClick={this.handleHello}>
-            Hello
-          </button>
-          <button className="button" onClick={this.handleGoodNight}>
-            GoodNight
           </button>
         </form>
       </div>
