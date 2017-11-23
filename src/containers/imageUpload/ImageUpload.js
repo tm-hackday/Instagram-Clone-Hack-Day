@@ -7,7 +7,6 @@ class ImageUpload extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Upload Your Images</h1>
         <FileUploader/>
         <form className="form">
           <Link to="/" className="button">

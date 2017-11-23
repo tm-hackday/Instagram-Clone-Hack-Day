@@ -8,7 +8,7 @@ class ImageView extends Component {
         <h1>Image Stream</h1>
         <form className="form">
           <Link to="/" className="button">
-            Private
+            Home
           </Link>
         </form>
       </div>

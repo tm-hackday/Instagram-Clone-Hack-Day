@@ -13,18 +13,6 @@
   .wrapper.form-success .container h1 {
     transform: translateY(85px); }
 
-.dropzone {
-  z-index: 2; }
-
-.imagePreview {
-  height: auto;
-  width: auto;
-  max-width: 200px;
-  max-height: 200px; }
-
-ul {
-  list-style-type: none; }
-
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -169,6 +157,110 @@ form {
       width: 160px;
       height: 160px;
       animation-delay: 11s; }
+
+.dropzone .button {
+  margin: 0 auto 10px auto;
+  margin-top: 25px;
+  display: block;
+  transform: scale(0.8);
+  background-color: #005631;
+  color: #fff; }
+  .dropzone .button:hover {
+    background-color: #007F49;
+    color: #fff; }
+
+.dropzone input {
+  display: block;
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 220px;
+  height: 35px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  margin-top: 25px;
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  transition-duration: 0.25s;
+  font-weight: 300; }
+  .dropzone input:hover {
+    background-color: fade(white, 40%); }
+  .dropzone input:focus {
+    background-color: white;
+    width: 240px;
+    height: 35px;
+    text-align: left;
+    color: #0EC375; }
+
+.dropzone textarea {
+  display: block;
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 350px;
+  height: 130px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  margin-top: 30px;
+  color: white;
+  resize: none;
+  transition-duration: 0.25s;
+  font-weight: 300; }
+  .dropzone textarea:hover {
+    background-color: fade(white, 40%); }
+  .dropzone textarea:focus {
+    background-color: white;
+    width: 350px;
+    height: 150px;
+    text-align: left;
+    color: #0EC375; }
+
+.dropZoneStyle {
+  height: 400px;
+  width: 600px; }
+  .dropZoneStyle p {
+    cursor: pointer; }
+
+.dropZoneContent {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+  height: 100%; }
+
+.errorMessage {
+  color: red;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 10px 0; }
+
+.imagePreview {
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 400px;
+  z-index: 3;
+  padding: 5px;
+  background-color: #fff; }
+
+ul {
+  list-style-type: none; }
 
 @-webkit-keyframes square {
   0% {
