@@ -67,6 +67,7 @@ class FileUploader extends React.Component {
       this.setState({
         errorMessage:1
       });
+      return 0
     }
   }
 
@@ -90,9 +91,12 @@ class FileUploader extends React.Component {
           </Dropzone>
           <input placeholder="Image Title" onChange = {e=> this.titleChange(e)} />
           <textarea placeholder="Image Description ..." onChange = {e=> this.descriptionChange(e)}/>
-          <div className="button" onClick={e => this.submitImage(e)}>
+          <div className="button greenButton" onClick={e => this.submitImage(e)}>
             Submit
           </div>
+          <Link to="/" className="button" style={{ textDecoration: 'none' }}>
+            Home
+          </Link>
         </form>
       </section>
     );

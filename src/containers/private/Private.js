@@ -23,10 +23,10 @@ class Private extends Component {
         <h1>Welcome</h1>
         {hello && <h2>{hello.Message}</h2>}
         <form className="form">
-          <Link to="imageUpload" className="button">
+          <Link to="imageUpload" className="button" style={{ textDecoration: 'none' }}>
             Upload Image
           </Link>
-          <Link to="imageView" className="button">
+          <Link to="imageView" className="button" style={{ textDecoration: 'none' }}>
             View Images
           </Link>
           <button className="button" onClick={this.handleSignOut}>

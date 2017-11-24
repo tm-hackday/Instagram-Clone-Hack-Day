@@ -224,13 +224,20 @@ form{
   }
 }
 
+
 .dropzone{
 
   .button{
     margin: 0 auto 10px auto;
     margin-top: 25px;
     display: block;
-    transform: scale(0.8);
+
+  }
+
+  .greenButton{
+    margin: 0 auto 10px auto;
+    margin-top: 25px;
+    display: block;
     background-color: #005631;
     color: #fff;
     &:hover{
@@ -334,13 +341,16 @@ form{
 }
 
 .errorMessage{
-  color: red;
-  font-size: 19px;
+  color: #800000;
+  font-size: 20px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.5);
   padding:10px 0;
   border-radius: 5px;
   margin: 10px 0 ;
+  top:5px;
+  position:fixed;
+  width:600px;
 }
 
 .imagePreview{

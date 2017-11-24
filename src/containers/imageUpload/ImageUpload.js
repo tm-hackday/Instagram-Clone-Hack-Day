@@ -9,9 +9,6 @@ class ImageUpload extends Component {
       <div className="container">
         <FileUploader/>
         <form className="form">
-          <Link to="/" className="button">
-            Home
-          </Link>
         </form>
       </div>
     );

@@ -7,7 +7,7 @@ class ImageView extends Component {
       <div className="container">
         <h1>Image Stream</h1>
         <form className="form">
-          <Link to="/" className="button">
+          <Link to="/" className="button" style={{ textDecoration: 'none' }}>
             Home
           </Link>
         </form>

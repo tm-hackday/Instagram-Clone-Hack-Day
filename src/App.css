@@ -161,11 +161,15 @@ form {
 .dropzone .button {
   margin: 0 auto 10px auto;
   margin-top: 25px;
+  display: block; }
+
+.dropzone .greenButton {
+  margin: 0 auto 10px auto;
+  margin-top: 25px;
   display: block;
-  transform: scale(0.8);
   background-color: #005631;
   color: #fff; }
-  .dropzone .button:hover {
+  .dropzone .greenButton:hover {
     background-color: #007F49;
     color: #fff; }
 
@@ -242,13 +246,16 @@ form {
   height: 100%; }
 
 .errorMessage {
-  color: red;
-  font-size: 19px;
+  color: #800000;
+  font-size: 20px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 0;
   border-radius: 5px;
-  margin: 10px 0; }
+  margin: 10px 0;
+  top: 5px;
+  position: fixed;
+  width: 600px; }
 
 .imagePreview {
   height: auto;
