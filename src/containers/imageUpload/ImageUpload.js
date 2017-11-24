@@ -6,7 +6,7 @@ import FileUploader from './FileUploader'
 class ImageUpload extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container uploadContainer">
         <FileUploader/>
         <form className="form">
         </form>

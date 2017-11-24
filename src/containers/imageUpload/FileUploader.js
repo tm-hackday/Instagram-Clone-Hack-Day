@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Dropzone from 'react-dropzone';
+import base64 from 'base-64';
+import utf8 from 'utf8';
+import fileDownload from 'react-file-download';
+
 
 class FileUploader extends React.Component {
   constructor() {
@@ -8,7 +12,9 @@ class FileUploader extends React.Component {
     this.state = { files: [],
                     imageTitle:'',
                     imageDescription:'',
-                    errorMessage:0}
+                    errorMessage:0,
+                    imageSource:''
+                  }
   }
 
   onDrop(newFile, rejectedFile) {
@@ -58,17 +64,66 @@ class FileUploader extends React.Component {
 
   descriptionChange(e){
     this.setState({
-      imageDescriptions:e.target.value
+      imageDescription:e.target.value
     });
   }
 
+  getLocalImageAddress(){
+    fetch(this.state.files[0].preview,{
+      method:'GET'
+    }).then(response => this.convertFileToDataURLviaFileReader(response.url, (res) => {
+      this.postImage(res)
+      })
+    )}
+
+  convertFileToDataURLviaFileReader(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        callback(reader.result);
+      }
+      reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+  }
+
   submitImage(e){
-    if(this.state.files.length === 0 || this.state.imageTitle ===""){
+    if(this.state.files.length === 0 || this.state.imageTitle ==="" || this.state.imageDescription ===""){
       this.setState({
         errorMessage:1
-      });
-      return 0
+      })
+    }else{
+      this.getLocalImageAddress();
     }
+  }
+
+  postImage(encodedImage){
+    const FETCH_URL = "https://tfuh8kzd5m.execute-api.eu-west-1.amazonaws.com/dev/auth/upload";
+
+    const postBody = {
+      title: this.state.imageTitle,
+      description: this.state.imageDescription,
+      image: encodedImage
+    }
+
+    let myHeaders = new Headers();
+    myHeaders.append('Content-Type','application/json');
+
+    fetch(FETCH_URL,{
+      method:'POST',
+      headers: myHeaders,
+      body:JSON.stringify(postBody)
+    }).then(
+      response => response.json())
+      .then(
+        json => {
+          window.location.reload();
+          }).catch(function(error) {
+              alert("System was not able to connect to server");
+              })
   }
 
   render() {
