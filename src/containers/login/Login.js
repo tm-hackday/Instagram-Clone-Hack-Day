@@ -52,6 +52,18 @@ class Login extends Component {
           />
           <button type="submit">Login</button>
         </form>
+        <ul className="bg-bubbles">
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+        </ul>
       </div>
     );
   }

@@ -80,18 +80,6 @@ class App extends Component {
             component={() => <ImageView />}
           />
         </Switch>
-        <ul className="bg-bubbles">
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-        </ul>
       </div>
     );
   }
