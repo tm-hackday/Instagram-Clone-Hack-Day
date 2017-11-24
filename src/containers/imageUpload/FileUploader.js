@@ -29,7 +29,7 @@ class FileUploader extends React.Component {
   showPreviews(){
 
     if(this.state.files.length === 0){
-      return (<p>Try dropping some files here to upload them</p>)
+      return (<p>Try clicking or dropping some images here or to upload them</p>)
     }
     return(
     <aside>
@@ -135,16 +135,17 @@ class FileUploader extends React.Component {
       {this.errorMessage()}
       <h1>Upload Your Images</h1>
         <form className="dropzone" onSubmit={e=> e.preventDefault()}>
+        <input placeholder="Image Title" onChange = {e=> this.titleChange(e)} />
+
           <Dropzone className = "dropZoneStyle"
                     onDrop={this.onDrop.bind(this)}
                     multiple={false}
-                    maxSize={500000}
-                    disableClick={true}>
+                    //maxSize={500000}
+                    disableClick={false}>
             <div className="dropZoneContent">
             {this.showPreviews()}
             </div>
           </Dropzone>
-          <input placeholder="Image Title" onChange = {e=> this.titleChange(e)} />
           <textarea placeholder="Image Description ..." onChange = {e=> this.descriptionChange(e)}/>
           <div className="button greenButton" onClick={e => this.submitImage(e)}>
             Submit
